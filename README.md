@@ -50,7 +50,7 @@ cangufy
     └── README.md
 ~~~
 
-# 5 Modelos
+
 
 # Agradecimientos
 
@@ -58,5 +58,7 @@ cangufy
 
 
 
+
+![GitHub repo size](https://img.shields.io/github/repo-size/patri-carrasco/cangufy)
 
 
