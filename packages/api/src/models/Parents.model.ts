@@ -1,5 +1,8 @@
 import mongoose, { Document, Schema } from 'mongoose';
 
+
+
+
 export interface Parents extends Document {
     children: Number,
     year: [Number],
@@ -15,7 +18,13 @@ const schema = new Schema({
   location: {type: String,require: true},
   schedule:{type: Date,require: true},
   price_max:{type: Number,require: true},
-  additionalFeatures:{type:[String]}
+  additionalFeatures:{
+    type:[String],
+    enum: {
+      values: ['English', 'Maths'],
+      message: '{VALUE} is not supported'
+    }
+  }
 });
 
 export const Parents = mongoose.model<Parents>('Parents', schema);

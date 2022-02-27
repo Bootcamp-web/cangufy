@@ -7,7 +7,7 @@ export interface Booking extends Document {
     parentsId: Parents["_id"],
     dateStart: Date,
     dateEnd: Date,
-    totalPrice: Number
+ 
 }
 
 const schema = new Schema({
@@ -15,9 +15,6 @@ const schema = new Schema({
     parentsId: { type: Schema.Types.ObjectId, ref: "Parents" },
     dateStart:{ type: Date, require: true},
     dateEnd:{ type: Date, require: true},
-    totalPrice: {type: Number,require: true}
-
-
 })
 
 
