@@ -19,6 +19,8 @@ type Myrequest = FastifyRequest<{
   
    
     app.post('/', async (request:Myrequest, reply:FastifyReply) => {
+        
+       
         const { firstName,
             lastName,
             childrenId,

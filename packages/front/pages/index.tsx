@@ -1,1 +1,7 @@
-export default () => <p>Hello World </p>;
+
+
+const IndexPage = () => (
+    <p>Hola caraculo</p>
+);
+
+export default IndexPage;
