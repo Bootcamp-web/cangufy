@@ -4,8 +4,13 @@
   "description": "![](./logo/CanguFy.png)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "lerna run dev --stream"
   },
+
+  "workspaces":[
+    "packages/*"
+  ],
+  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Bootcamp-web/cangufy.git"
