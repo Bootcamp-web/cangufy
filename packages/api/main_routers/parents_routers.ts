@@ -1,4 +1,5 @@
 import { FastifyPluginAsync, FastifyRequest, FastifyReply } from 'fastify';
+import { Children } from '../src/models/Chidren.models';
 import { Parents } from '../src/models/Parents.model';
 
 
@@ -13,6 +14,12 @@ type Myrequest = FastifyRequest<{
     Params: {id: string}
   }>
   
+
+type MyrequestChildren = FastifyRequest<{
+    Body: {Name: String,
+        Age:Number};
+    Params: {id: string}
+  }>
 
   export const parents_router: FastifyPluginAsync = async (app) => {
     app.get('/', async () => ({ hello: 'api/parents' }));
@@ -37,6 +44,17 @@ type Myrequest = FastifyRequest<{
             additionalFeatures})
         await parents.save()
         return parents;
+    
+    });
+    app.post('/', async (request:MyrequestChildren, reply:FastifyReply) => {
+        
+       
+        const { Name,
+            Age }= request.body
+        const children = new Children({Name,
+            Age})
+        await children.save()
+        return children;
     
     });
   //   app.get('/:id/delete', async (request:Myrequest, reply:FastifyReply) => {

@@ -19,6 +19,19 @@ export const addParents = async (data)=>{
   return res.data
 }
 
+export const addChildren = async (data)=>{
+    console.log("data desde children", data)
+   const res = await api.post('/parents',data)
+   console.log("add children",res.data)
+   return res.data
+ }
+
+ export const addNanny = async (data)=>{
+  console.log("data desde nanny", data)
+ const res = await api.post('/nanny',data)
+ console.log("add nanny",res.data)
+ return res.data
+}
 // export const deleteIngredient = async (ingid)=>{
 //   const res = await api.get(`/ingredients/${ingid}/delete`)
 //   return res.data

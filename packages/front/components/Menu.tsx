@@ -12,6 +12,9 @@ const Menu = () => {
       <li>
         <Link href="/Parents">Parents</Link>
       </li>
+      <li>
+        <Link href="/Nanny">Nanny</Link>
+      </li>
     </ul>
   );
 };

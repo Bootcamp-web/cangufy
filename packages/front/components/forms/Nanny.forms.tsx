@@ -1,11 +1,12 @@
 import React, {useState} from "react";
 import { useForm } from "react-hook-form";
-import { addParents, getParents } from "../../lib/api";
-import { ChildrenForms } from "./Children.forms";
+import { addNanny } from "../../lib/api";
+
+
 
 //export const ParentsForms = ({onAddItem})=>{
 
-export const ParentsForms = ()=>{
+export const NannyForms = ()=>{
     const [item, setItem] = useState();
 
   const {
@@ -18,7 +19,7 @@ export const ParentsForms = ()=>{
   const onSubmit = handleSubmit(async (item) => {
     console.log('Datos del form')
     console.log(item)
-    const ing = await addParents(item);
+    const ing = await addNanny(item);
     reset();
   });
  
@@ -35,18 +36,20 @@ export const ParentsForms = ()=>{
                 <input placeholder="Last Name" {...register('lastName', { required: 'Add Last Name' })} />     
             </div>
             <div>
+              <input placeholder="Min Age" {...register('minAge', { required: 'Add min age' })} /> 
+              <input placeholder="Max Age" {...register('maxAge', { required: 'Add max age' })} />
+            </div>
+            <div>
                 <input placeholder="location" {...register('location', { required: 'Add Location' })} />
-                <input placeholder="schedule" {...register('schedule', { required: 'Add  schedule' })} />
-                <input placeholder="price max" {...register('price max', { required: 'Add price max' })} />
+               
+                <input placeholder="pricePerHour" {...register('pricePerHour', { required: 'Add price max' })} />
             </div>
            
             <div>
                 <input placeholder="aditional features" {...register('aditional features', { required: 'Add additional features' })} />
             </div>
-            <div>
-                <ChildrenForms/>
-            </div>
-            <button onClick={onSubmit} type="button">Add parent</button>
+          
+            <button onClick={onSubmit} type="button">Add Nanny</button>
         </div>
      </form>
   );
