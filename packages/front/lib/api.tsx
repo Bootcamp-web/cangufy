@@ -14,17 +14,18 @@ export const getParents = async () => {
 
 export const addParents = async (data)=>{
    console.log("data", data)
+   //TODO: separar padres de hijos
   const res = await api.post('/parents',data)
   console.log("add parents",res.data)
   return res.data
 }
 
-export const addChildren = async (data)=>{
-    console.log("data desde children", data)
-   const res = await api.post('/parents',data)
-   console.log("add children",res.data)
-   return res.data
- }
+// export const addChildren = async (data)=>{
+//     console.log("data desde children", data)
+//    const res = await api.post('/parents',data)
+//    console.log("add children",res.data)
+//    return res.data
+//  }
 
  export const addNanny = async (data)=>{
   console.log("data desde nanny", data)

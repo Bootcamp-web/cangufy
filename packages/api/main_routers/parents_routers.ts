@@ -1,11 +1,12 @@
 import { FastifyPluginAsync, FastifyRequest, FastifyReply } from 'fastify';
-import { Children } from '../src/models/Chidren.models';
+import { Children } from '../src/models/Children.models';
 import { Parents } from '../src/models/Parents.model';
 
 
 type Myrequest = FastifyRequest<{
     Body: {firstName: String,
         lastName:String,
+        numChildren:number,
         childrenId: Number,
         location: String,
         schedule:Date,
@@ -46,17 +47,17 @@ type MyrequestChildren = FastifyRequest<{
         return parents;
     
     });
-    app.post('/', async (request:MyrequestChildren, reply:FastifyReply) => {
+    // app.post('/', async (request:MyrequestChildren, reply:FastifyReply) => {
         
        
-        const { Name,
-            Age }= request.body
-        const children = new Children({Name,
-            Age})
-        await children.save()
-        return children;
+    //     const { Name,
+    //         Age }= request.body
+    //     const children = new Children({Name,
+    //         Age})
+    //     await children.save()
+    //     return children;
     
-    });
+    // });
   //   app.get('/:id/delete', async (request:Myrequest, reply:FastifyReply) => {
   
   //     const {id} = request.params;

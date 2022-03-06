@@ -1,7 +1,7 @@
 
 
 const IndexPage = () => (
-    <p>Hola caraculo</p>
+    <p>Welcome Cangufy</p>
 );
 
 export default IndexPage;

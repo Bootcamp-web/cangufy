@@ -1,5 +1,5 @@
 import { FastifyPluginAsync, FastifyRequest, FastifyReply } from 'fastify';
-import { Children } from '../src/models/Chidren.models';
+import { Children } from '../src/models/Children.models';
 
 
 type Myrequest = FastifyRequest<{

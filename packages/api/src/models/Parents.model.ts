@@ -1,5 +1,5 @@
 import mongoose, { Document, Schema } from 'mongoose';
-import { Children } from './Chidren.models';
+import { Children } from './Children.models';
 
 
 

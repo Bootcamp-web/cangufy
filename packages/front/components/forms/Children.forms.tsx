@@ -1,10 +1,9 @@
 import React, {useState} from "react";
 import { useForm } from "react-hook-form";
-import { addChildren, addParents, getParents } from "../../lib/api";
 
 //export const ParentsForms = ({onAddItem})=>{
 
-export const ChildrenForms = ()=>{
+export const ChildrenForms = (props)=>{
    
 
   const {
@@ -15,10 +14,8 @@ export const ChildrenForms = ()=>{
   } = useForm();
 
   const onSubmit = handleSubmit(async (item) => {
-    console.log('Datos del form')
     console.log(item)
-    const ing = await addChildren(item);
-    reset();
+    props.setChildren(item)
   });
  
 
@@ -36,7 +33,7 @@ export const ChildrenForms = ()=>{
                 <input placeholder="Age" {...register('Age', { required: 'Add price max' })} />
             </div>
        
-            <button onClick={onSubmit} type="button">Add children</button>
+            <button onClick={onSubmit} type="button">Set children</button>
         </div>
      </form>
   );
