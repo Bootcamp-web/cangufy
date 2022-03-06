@@ -6,8 +6,7 @@ import { Parents } from '../src/models/Parents.model';
 type Myrequest = FastifyRequest<{
     Body: {firstName: String,
         lastName:String,
-        numChildren:number,
-        childrenId: Number,
+        children: [Object],
         location: String,
         schedule:Date,
         price_max:Number,
@@ -17,8 +16,9 @@ type Myrequest = FastifyRequest<{
   
 
 type MyrequestChildren = FastifyRequest<{
-    Body: {Name: String,
-        Age:Number};
+    Body: {name: String,
+        age:Number,
+        parentId:Number};
     Params: {id: string}
   }>
 
@@ -27,23 +27,29 @@ type MyrequestChildren = FastifyRequest<{
   
    
     app.post('/', async (request:Myrequest, reply:FastifyReply) => {
-        
        
         const { firstName,
             lastName,
-            childrenId,
+            children,
             location,
             schedule,
             price_max,
             additionalFeatures}= request.body
         const parents = new Parents({firstName,
             lastName,
-            childrenId,
             location,
             schedule,
             price_max,
             additionalFeatures})
         await parents.save()
+        console.log("parentsifd",parents._id)
+        const parentId= parents._id
+        children.forEach(async ({name, age,parentId}: any) => {
+            const child = new Children({name, age,parentId})
+            console.log("child dentro de post parents",child)
+            await child.save()
+        })
+    
         return parents;
     
     });

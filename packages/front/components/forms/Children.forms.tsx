@@ -14,7 +14,6 @@ export const ChildrenForms = (props)=>{
   } = useForm();
 
   const onSubmit = handleSubmit(async (item) => {
-    console.log(item)
     props.setChildren(item)
   });
  
@@ -26,14 +25,14 @@ export const ChildrenForms = (props)=>{
         <div style={{ padding: '20px' }}>
             <div>
 
-                <input placeholder="Name" {...register('Name', { required: 'Add  First Name' })} />
+                <input placeholder="Name" {...register('name', { required: 'Add  First Name' })} />
                 {/* <Error field="name" errors={errors} /> */}  
             </div>
             <div>
-                <input placeholder="Age" {...register('Age', { required: 'Add price max' })} />
+                <input placeholder="Age" {...register('age', { required: 'Add price max' })} />
             </div>
        
-            <button onClick={onSubmit} type="button">Set children</button>
+            <button onClick={onSubmit} type="button">Add child</button>
         </div>
      </form>
   );

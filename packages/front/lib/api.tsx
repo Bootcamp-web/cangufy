@@ -1,4 +1,5 @@
 import axios from 'axios';
+import RenderResult from 'next/dist/server/render-result';
 import React, {useEffect } from 'react';
 
 const apiBaseURL = 'http://localhost:3001';
@@ -13,10 +14,9 @@ export const getParents = async () => {
 
 
 export const addParents = async (data)=>{
-   console.log("data", data)
-   //TODO: separar padres de hijos
+  console.log("add parents",data)
   const res = await api.post('/parents',data)
-  console.log("add parents",res.data)
+  console.log("add parents después del post",res.data)
   return res.data
 }
 

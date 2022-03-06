@@ -1,18 +1,18 @@
 import mongoose, { Document, Schema } from 'mongoose';
-
-
-
+import { Parents } from './Parents.model';
 
 export interface Children extends Document {
-    Name: Number,
+    name: String,
     age: Number,
+    parentId: Parents["_id"]
     //TODO: Alergias, etc....
    // special_cares:String
 }
 
 const schema = new Schema({
-    name:  { type: Number, require: true },
+    name:  { type: String, require: true },
     age: {type: Number,required: true},
+    parentId:{ type: Schema.Types.ObjectId, ref: "Parents" }
     //special_cares:{type:[String],required: true}
    
 });

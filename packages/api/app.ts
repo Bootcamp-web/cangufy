@@ -9,8 +9,6 @@ import { parents_router } from './main_routers/parents_routers';
 export const main_app: FastifyPluginAsync = async (app) => {
     conectDB();
   
-  
-
     app.register(fastifyCors, {
       origin: (origin, cb) => {
         if (/localhost/.test(origin)) {
@@ -24,7 +22,7 @@ export const main_app: FastifyPluginAsync = async (app) => {
     });
       
     app.register(main_router);
-    //app.register(parents_router, { prefix: '/parents' });
+    app.register(parents_router, { prefix: '/parents' });
     app.register(nanny_router, { prefix: '/nanny' });
     // app.register(children_router,{ prefix: '/children' });
    

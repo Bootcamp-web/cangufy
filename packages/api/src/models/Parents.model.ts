@@ -7,7 +7,7 @@ import { Children } from './Children.models';
 export interface Parents extends Document {
   firstName: String,
   lastName:String,
-  childrenId: Children["_id"],
+  // childrenId: Children["_id"],
   location: String,
   schedule:Date,
   price_max:Number,
@@ -16,8 +16,8 @@ export interface Parents extends Document {
 
 const schema = new Schema({
   firstName: {type: String,require: true},
-  lastName: {type: String,require: true},
-  childrenId: { type: Schema.Types.ObjectId, ref: "Children" },
+  lastName: {type: String,require: true},  
+  // childrenId: { type: Schema.Types.ObjectId, ref: "Children" },
   location: {type: String,require: true},
   schedule:{type: Date,require: true},
   price_max:{type: Number,require: true},
