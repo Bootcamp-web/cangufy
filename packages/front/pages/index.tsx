@@ -1,7 +1,16 @@
 
-
-const IndexPage = () => (
-    <p>Welcome Cangufy</p>
-);
+const IndexPage = () => {
+    return(
+        <div>
+            <p>Welcome Cangufy</p>
+        </div>
+    )
+};
 
 export default IndexPage;
+
+
+
+
+
+

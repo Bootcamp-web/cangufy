@@ -7,6 +7,7 @@ const MyApp = (props) => {
   return (
     <>
       <header>
+        <title>Cangufy</title>
         <Menu />
       </header>
       <style jsx>
@@ -28,6 +29,7 @@ const MyApp = (props) => {
       <main>
           <div className="page">
             <Component {...pageProps} />
+          
           </div>
       </main>
     </>
