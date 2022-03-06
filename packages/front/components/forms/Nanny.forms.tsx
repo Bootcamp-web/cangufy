@@ -33,7 +33,8 @@ export const NannyForms = ()=>{
 
                 <input placeholder="First Name" {...register('firstName', { required: 'Add  First Name' })} />
                 {/* <Error field="name" errors={errors} /> */}
-                <input placeholder="Last Name" {...register('lastName', { required: 'Add Last Name' })} />     
+                <input placeholder="Last Name" {...register('lastName', { required: 'Add Last Name' })} />   
+                <input placeholder="Email" {...register('email', { required: 'Add email' })} />    
             </div>
             <div>
               <input placeholder="Min Age" {...register('minAge', { required: 'Add min age' })} /> 

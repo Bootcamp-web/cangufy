@@ -4,6 +4,7 @@ import mongoose, { Document, Schema } from 'mongoose';
 export interface Parents extends Document {
   firstName: String,
   lastName:String,
+  email:String,
   location: String,
   schedule:Date,
   price_max:Number,
@@ -14,6 +15,7 @@ export interface Parents extends Document {
 const schema = new Schema({
   firstName: {type: String,require: true},
   lastName: {type: String,require: true},  
+  email:String,
   location: {type: String,require: true},
   schedule:{type: Date,require: true},
   price_max:{type: Number,require: true},

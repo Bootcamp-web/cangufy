@@ -20,12 +20,11 @@ export const addParents = async (data)=>{
   return res.data
 }
 
-// export const addChildren = async (data)=>{
-//     console.log("data desde children", data)
-//    const res = await api.post('/parents',data)
-//    console.log("add children",res.data)
-//    return res.data
-//  }
+export const addBooking= async (data)=>{
+   const res = await api.post('/booking',data)
+   console.log("add booking",res.data)
+   return res.data
+ }
 
  export const addNanny = async (data)=>{
   console.log("data desde nanny", data)

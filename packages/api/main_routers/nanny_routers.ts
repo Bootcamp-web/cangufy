@@ -8,6 +8,7 @@ type Myrequest = FastifyRequest<{
         lastName:String,
         minAge:Number,
         maxAge:Number,
+        email:string,
         location:String
         pricePerHour:Number,
         additionalFeatures:[String]};
@@ -24,15 +25,17 @@ type Myrequest = FastifyRequest<{
        
         const { firstName,
             lastName,
-           minAge,
-           maxAge,
+            minAge,
+            maxAge,
+            email,
             location,
             pricePerHour,
             additionalFeatures}= request.body
         const parents = new Nanny({firstName,
             lastName,
-           minAge,
-           maxAge,
+            minAge,
+            maxAge,
+            email,
             location,
             pricePerHour,
             additionalFeatures})

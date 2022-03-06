@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { useForm } from "react-hook-form";
-import { addParents, getParents } from "../../lib/api";
+import { addParents } from "../../lib/api";
 import { ChildrenForms } from "./Children.forms";
 
 //export const ParentsForms = ({onAddItem})=>{
@@ -35,7 +35,9 @@ export const ParentsForms = ()=>{
         <div>
           <input placeholder="First Name" {...register('firstName', { required: 'Add  First Name' })} />
           {/* <Error field="name" errors={errors} /> */}
-          <input placeholder="Last Name" {...register('lastName', { required: 'Add Last Name' })} />     
+          <input placeholder="Last Name" {...register('lastName', { required: 'Add Last Name' })} />   
+          <input placeholder="email" {...register('email', { required: 'Add email' })} />     
+          
         </div>
     
         <div>

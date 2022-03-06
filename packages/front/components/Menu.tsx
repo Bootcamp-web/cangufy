@@ -26,6 +26,10 @@ const Menu = () => {
               <Link href="/Nanny">
                 <a className="nav-link">Nanny</a>
               </Link>
+            </li> <li className="nav-item">
+              <Link href="/Booking">
+                <a className="nav-link">Booking</a>
+              </Link>
             </li>
           </ul>
           <ul className="navbar-nav px-3">

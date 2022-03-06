@@ -8,6 +8,7 @@ type Myrequest = FastifyRequest<{
         lastName:String,
         children: [Object],
         location: String,
+        email:String,
         schedule:Date,
         price_max:Number,
         numChildren:Number
@@ -15,13 +16,6 @@ type Myrequest = FastifyRequest<{
     Params: {id: string}
   }>
   
-
-type MyrequestChildren = FastifyRequest<{
-    Body: {name: String,
-        age:Number,
-        parentId:Number};
-    Params: {id: string}
-  }>
 
   export const parents_router: FastifyPluginAsync = async (app) => {
     app.get('/', async () => ({ hello: 'api/parents' }));
@@ -33,6 +27,7 @@ type MyrequestChildren = FastifyRequest<{
             lastName,
             children,
             location,
+            email,
             schedule,
             price_max,
             numChildren,
@@ -40,6 +35,7 @@ type MyrequestChildren = FastifyRequest<{
         const parents = new Parents({firstName,
             lastName,
             location,
+            email,
             schedule,
             price_max,
             numChildren,
@@ -47,7 +43,7 @@ type MyrequestChildren = FastifyRequest<{
         await parents.save()
         console.log("parentsifd",parents._id)
         const parentId= parents._id
-        children.forEach(async ({name, age,parentId}: any) => {
+        children.forEach(async ({name, age}: any) => {
             const child = new Children({name, age,parentId})
             console.log("child dentro de post parents",child)
             await child.save()
@@ -56,17 +52,6 @@ type MyrequestChildren = FastifyRequest<{
         return parents;
     
     });
-    // app.post('/', async (request:MyrequestChildren, reply:FastifyReply) => {
-        
-       
-    //     const { Name,
-    //         Age }= request.body
-    //     const children = new Children({Name,
-    //         Age})
-    //     await children.save()
-    //     return children;
-    
-    // });
   //   app.get('/:id/delete', async (request:Myrequest, reply:FastifyReply) => {
   
   //     const {id} = request.params;

@@ -5,6 +5,7 @@ export interface Nanny extends Document {
     lastName:String
     minAge: Number,
     maxAge: Number,
+    email:String,
     location: String,
     pricePerHour:Number,
     additionalFeatures:[String]
@@ -15,6 +16,7 @@ const schema = new Schema({
     lastName: {type: String,require: true},
     minAge: {type: Number,required: true},
     maxAge: {type: Number,required: true},
+    email: {type: String,require: true},
     location: {type: String,require: true},
     pricePerHour:{type: Number,require: true},
     additionalFeatures:{
