@@ -11,11 +11,11 @@ border: 2px solid palevioletred;
 border-radius: 3px;
 `
 const DivNanny =styled.div`
-color: red;
+color: #FA9B1E;
 font-size: 1em;
 margin: 1em;
 padding: 0.25em 1em;
-border: 2px solid red;
+border: 2px solid #FA9B1E;
 border-radius: 3px;
 `
 
