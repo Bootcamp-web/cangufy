@@ -25,6 +25,11 @@ export const addBooking= async (data)=>{
    console.log("add booking",res.data)
    return res.data
  }
+ export const getBooking = async () => {
+  const res = await api.get('/Booking');
+  console.log(res)
+  return res.data;
+};
 
  export const addNanny = async (data)=>{
   console.log("data desde nanny", data)
@@ -32,7 +37,3 @@ export const addBooking= async (data)=>{
  console.log("add nanny",res.data)
  return res.data
 }
-// export const deleteIngredient = async (ingid)=>{
-//   const res = await api.get(`/ingredients/${ingid}/delete`)
-//   return res.data
-// }

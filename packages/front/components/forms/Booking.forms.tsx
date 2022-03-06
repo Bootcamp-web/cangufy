@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
 import { useForm } from "react-hook-form";
 import { addBooking, addParents, getParents } from "../../lib/api";
+import MatchCard from "../MatchCard";
 
 
 export const BookignForms = ()=>{
-  const [children, setChildren] = useState([null]);
-
+  const [match, setMatch] = useState(null);
   const {
     register,
     handleSubmit,
@@ -16,13 +16,17 @@ export const BookignForms = ()=>{
 
   const onSubmit = handleSubmit(async (item) => {
     console.log('Datos del form',item)
-    await addBooking(item);
+    const match = await addBooking(item);
+    setMatch(match)
+    console.log("match",match)
     reset();
   });
- 
+  
+  
 
 
   return (
+    <>
     <form onSubmit={handleSubmit(onSubmit)}>
       <div style={{ padding: '20px' }}>
         <div>   
@@ -36,6 +40,8 @@ export const BookignForms = ()=>{
         <button onClick={onSubmit} type="button">Add booking</button>
       </div>
      </form>
+    <MatchCard match={match} /> 
+    </>
   );
 };
 

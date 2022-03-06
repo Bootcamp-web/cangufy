@@ -7,7 +7,6 @@ const Menu = () => {
  
   return (
     
-
     <Nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-xl">  
         <div className="collapse navbar-collapse" id="navbarsExample07XL">
@@ -32,7 +31,7 @@ const Menu = () => {
               </Link>
             </li>
           </ul>
-          <ul className="navbar-nav px-3">
+          {/* <ul className="navbar-nav px-3">
             <li className="nav-item text-nowrap">
               <Button className="nav-link">
                   Login
@@ -43,24 +42,10 @@ const Menu = () => {
               </Button>
             </li>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </Nav>
-    
-    
-
-    // <ul>
-    //   <li>
-    //     <Link href="/">Home</Link>
-    //   </li>
-    //   <li>
-    //     <Link href="/Parents">Parents</Link>
-    //   </li>
-    //   <li>
-    //     <Link href="/Nanny">Nanny</Link>
-    //   </li>
-    // </ul>
   );
 };
 

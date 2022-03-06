@@ -70,9 +70,9 @@ const createParents =async () => {
     })
 
     const parent2 = await Parents.create({
-        firstName:'Robbie',
-        lastName:'Willimas',
-        email:'robbie.williams@gmail.com',
+        firstName:'Patricia',
+        lastName:'Carrasco',
+        email:'p.c@g.com',
         location:'Aranjuez',
         price_max:15,
         numChildren:2,
