@@ -42,6 +42,7 @@ export const ParentsForms = ()=>{
           <input placeholder="location" {...register('location', { required: 'Add Location' })} />
           <input placeholder="schedule" {...register('schedule', { required: 'Add  schedule' })} />
           <input placeholder="price max" {...register('price max', { required: 'Add price max' })} />
+          <input placeholder="number of children" {...register('num children', { required: 'Add number of children' })} />
         </div>
         
         <div>

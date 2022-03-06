@@ -10,6 +10,7 @@ type Myrequest = FastifyRequest<{
         location: String,
         schedule:Date,
         price_max:Number,
+        numChildren:Number
         additionalFeatures:[String]};
     Params: {id: string}
   }>
@@ -34,12 +35,14 @@ type MyrequestChildren = FastifyRequest<{
             location,
             schedule,
             price_max,
+            numChildren,
             additionalFeatures}= request.body
         const parents = new Parents({firstName,
             lastName,
             location,
             schedule,
             price_max,
+            numChildren,
             additionalFeatures})
         await parents.save()
         console.log("parentsifd",parents._id)

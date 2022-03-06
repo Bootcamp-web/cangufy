@@ -1,26 +1,23 @@
 import mongoose, { Document, Schema } from 'mongoose';
-import { Children } from './Children.models';
-
-
 
 
 export interface Parents extends Document {
   firstName: String,
   lastName:String,
-  // childrenId: Children["_id"],
   location: String,
   schedule:Date,
   price_max:Number,
+  numChildren:Number,
   additionalFeatures:[String]
 }
 
 const schema = new Schema({
   firstName: {type: String,require: true},
   lastName: {type: String,require: true},  
-  // childrenId: { type: Schema.Types.ObjectId, ref: "Children" },
   location: {type: String,require: true},
   schedule:{type: Date,require: true},
   price_max:{type: Number,require: true},
+  numChildren:{type: Number,require: true},
   additionalFeatures:{
     type:[String],
     enum: {
