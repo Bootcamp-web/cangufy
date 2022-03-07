@@ -9,8 +9,9 @@
 1. [Como instalar y ejecutar el proyecto](#schema4)
 1. [Estrcutura de proyecto](#schema5)
 1. [Dependencias del proyecto](#schema6)
-1. [Agradecimientos](#schema6)
-1. [Documentación](#schema8)
+1. [Modelos para la api](#schema7)
+1. [Agradecimientos](#schema8)
+1. [Documentación](#schema9)
 <hr>
 
 <a name="schema1"></a>
@@ -103,7 +104,71 @@ cangufy
 
 <a name="schema7 "></a>
 
-# 7 Agradecimientos
+# 7 Modelos para la api
+Tengo cuatro modelos.
+- Parents
+~~~ts
+const schema = new Schema({
+  firstName: {type: String,require: true},
+  lastName: {type: String,require: true},  
+  email:String,
+  location: {type: String,require: true},
+  schedule:{type: Date,require: true},
+  price_max:{type: Number,require: true},
+  numChildren:{type: Number,require: true},
+  additionalFeatures:{
+    type:[String],
+    enum: {
+      values: ['English', 'Maths'],
+      message: '{VALUE} is not supported'
+    }
+  }
+});
+~~~
+- Children
+~~~ts
+const schema = new Schema({
+    name:  { type: String, require: true },
+    age: {type: Number,required: true},
+    parentId:{ type: Schema.Types.ObjectId, ref: "Parents" }
+   
+});
+~~~
+- Nanny
+~~~ts
+const schema = new Schema({
+    firstName: {type: String,require: true},
+    lastName: {type: String,require: true},
+    minAge: {type: Number,required: true},
+    maxAge: {type: Number,required: true},
+    email: {type: String,require: true},
+    location: {type: String,require: true},
+    pricePerHour:{type: Number,require: true},
+    additionalFeatures:{
+        type:[String], 
+        require: true,
+        enum: {
+          values: ['English', 'Maths'],
+          message: '{VALUE} is not supported'
+        }
+    }
+});
+~~~
+- Booking
+~~~ts
+const schema = new Schema({
+    nannyId: { type: Schema.Types.ObjectId, ref: "Nanny" },
+    parentsId: { type: Schema.Types.ObjectId, ref: "Parents" },
+    dateStart:{ type: Date, require: true},
+    confirmed:{ type: Boolean},
+})
+~~~
+
+<hr>
+
+<a name="schema8"></a>
+
+# 8 Agradecimientos
 
 A mi, por haberme decidido a hacer el bootcamp. 
 
@@ -120,9 +185,9 @@ Y a [Core-Code-School](https://www.corecode.school/) por darme la oportunidad de
 
 <hr>
 
-<a name="schema8 "></a>
+<a name="schema9 "></a>
 
-# 8  Documentación
+# 9  Documentación
 
  [Auth0](https://auth0.com/)
 - [ESLint](https://eslint.org/docs/user-guide/getting-started)
